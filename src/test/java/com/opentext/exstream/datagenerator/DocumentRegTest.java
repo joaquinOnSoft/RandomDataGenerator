@@ -9,6 +9,9 @@ public class DocumentRegTest {
     @Test
     public void asPrice(){
         Assertions.assertEquals("\"12.345,67\"", doc.asStringAmount(12345.67f));
+
+        Assertions.assertEquals("\"12.345,00\"", doc.asStringAmount(12345.00f));
+
     }
 
     @Test
@@ -16,11 +19,12 @@ public class DocumentRegTest {
         //Registry example:
         //  D;"00001";"001";"A";"99.999,99"
         String docStr = doc.toRegistry();
+        System.out.println("Registry: " + docStr);
 
         Assertions.assertNotNull(docStr);
         Assertions.assertTrue(docStr.startsWith("D;\"00001\";\"001\";"));
-        Assertions.assertEquals(23, docStr.indexOf("."));
-        Assertions.assertEquals(27, docStr.indexOf(","));
+        Assertions.assertEquals(docStr.length() - 8, docStr.indexOf("."));
+        Assertions.assertEquals(docStr.length() - 4, docStr.indexOf(","));
     }
 
 

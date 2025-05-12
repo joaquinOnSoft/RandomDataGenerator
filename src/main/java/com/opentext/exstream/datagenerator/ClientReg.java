@@ -1,5 +1,7 @@
 package com.opentext.exstream.datagenerator;
 
+import com.opentext.exstream.util.RandomUtil;
+
 /// Registry type: Client
 ///
 /// Field definition:
@@ -16,7 +18,7 @@ package com.opentext.exstream.datagenerator;
 public class ClientReg extends AbstractRegistry{
     // titular
     private String holder;
-    // identificador
+    // identificador: "01568/00"
     private String id;
     // combinacion
     private String combination;
@@ -50,10 +52,22 @@ public class ClientReg extends AbstractRegistry{
 
     public ClientReg() {
         super(RegistryType.CLIENT);
+        holder = ClientManager.getRandomClient().toString();
+    }
+
+    //identificador: "01568/00"
+    protected String getRandomId(){
+        int id1 = RandomUtil.getRandomInt(1, 99999);
+        int id2 = RandomUtil.getRandomInt(1, 99);
+
+        return asFixLengthLeftZeroPadding(id1, 5) + "/" + asFixLengthLeftZeroPadding(id2, 2);
     }
 
     @Override
     public String toRegistry() {
-        return "";
+        // C;"VICTOR SAULER PORTAL";"01568/00";"Com. G-00007, Sub. 001, Emp. 001, Id. 002";"013";"001";"001-005";"200";"CCOD124";"2021";"20210906-00129-0000769";"001";"ES49 2100 9999 9999 9999 9999",06082021,05092021;"33.799,01";"CAIXESBBXXX"
+        return regType.toString() + DELIMITER +
+                asString(holder) + DELIMITER +
+                asString(id) + DELIMITER;
     }
 }

@@ -14,7 +14,7 @@ public abstract class AbstractRegistry {
 
     protected String asStringAmount(float value){
         DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(new Locale("es", "ES"));
-        decimalFormat.applyPattern("###,###.##");
+        decimalFormat.applyPattern("###,###.00");
         return "\"" + decimalFormat.format(value) + "\"";
     }
 
