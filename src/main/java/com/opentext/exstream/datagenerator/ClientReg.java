@@ -1,5 +1,6 @@
 package com.opentext.exstream.datagenerator;
 
+import com.opentext.exstream.util.BankUtil;
 import com.opentext.exstream.util.DateUtil;
 import com.opentext.exstream.util.RandomUtil;
 
@@ -16,7 +17,7 @@ import java.time.Year;
 /// Content example:
 ///
 /// ```
-/// C;"VICTOR SAULER PORTAL";"01568/00";"Com. G-00007, Sub. 001, Emp. 001, Id. 002";"013";"001";"001-005";"200";"CCOD124";"2021";"20210906-00129-0000769";"001";"ES49 2100 9999 9999 9999 9999",06082021,05092021;"33.799,01";"CAIXESBBXXX"
+/// C;"VICTOR SAULER PORTAL";"01568/00";"Com. G-00007, Sub. 001, Emp. 001, Id. 002";"013";"001";"001-005";"200";"CCOD124";"2021";"20210906-00129-0000769";"001";"ES49 2100 9999 9999 9999 9999";06082021;05092021;"33.799,01";"CAIXESBBXXX"
 /// ```
 public class ClientReg extends AbstractRegistry{
     private static final char[] letters = {
@@ -49,9 +50,9 @@ public class ClientReg extends AbstractRegistry{
     // iban
     private String iban;
     // periodoInicial
-    private String initialPrice;
+    private String initialPeriod;
     // periodoFinal
-    private String endPrice;
+    private String endPeriod;
     // saldo
     private float balance;
     // swift
@@ -70,6 +71,12 @@ public class ClientReg extends AbstractRegistry{
         expiry = getRandomExpiry();
         year = Year.now().getValue();
         lot = getRandomLot();
+        sheet = asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3);
+        iban = BankUtil.getRandomIban();
+        initialPeriod = DateUtil.nowToExstreamDate();
+        endPeriod = DateUtil.getExstreamDateNDaysAgo(30);
+        balance = RandomUtil.getRandomFloat(5000f, 99999f);
+        swift = BankUtil.getRandomSwift();
     }
 
     //identificador: "01568/00"
@@ -130,7 +137,13 @@ public class ClientReg extends AbstractRegistry{
                 asString(agreements) + DELIMITER +
                 asString(division)  + DELIMITER +
                 asString(expiry) + DELIMITER +
-                asString(Integer.toString(year))  + DELIMITER +
-                asString(lot) ;
+                asString(Integer.toString(year)) + DELIMITER +
+                asString(lot)  + DELIMITER +
+                asString(sheet) + DELIMITER +
+                asString(iban) + DELIMITER +
+                initialPeriod  + DELIMITER +
+                endPeriod  + DELIMITER +
+                asStringAmount(balance)  + DELIMITER +
+                asString(swift);
     }
 }

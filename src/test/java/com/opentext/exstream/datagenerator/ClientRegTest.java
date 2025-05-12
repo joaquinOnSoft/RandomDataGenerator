@@ -63,9 +63,13 @@ public class ClientRegTest {
     public void toRegistry() {
         //Registry example:
         /// C;"VICTOR SAULER PORTAL";"01568/00";"Com. G-00007, Sub. 001, Emp. 001, Id. 002";"013";"001";"001-005";"200";"CCOD124";"2021";"20210906-00129-0000769";"001";"ES49 2100 9999 9999 9999 9999",06082021,05092021;"33.799,01";"CAIXESBBXXX"
-        String clientRegistry = client.toRegistry();
+        String reg = client.toRegistry();
 
-        Assertions.assertNotNull(clientRegistry);
-        Assertions.assertTrue(clientRegistry.startsWith("C;\""));
+        Assertions.assertNotNull(reg);
+        Assertions.assertTrue(reg.startsWith("C;\""));
+
+        String[] tokens = reg.split(";");
+        Assertions.assertNotNull(tokens);
+        Assertions.assertEquals(17, tokens.length);
     }
 }
