@@ -20,7 +20,6 @@ public class RandomUtilTest {
         float max = 10;
         float random = RandomUtil.getRandomFloat(min, max);
 
-        System.out.println("Random: " + random);
         Assertions.assertTrue(random >= min);
         Assertions.assertTrue(random <= max);
     }

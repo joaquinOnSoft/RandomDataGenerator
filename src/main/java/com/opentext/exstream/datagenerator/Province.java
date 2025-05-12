@@ -22,8 +22,6 @@ public class Province {
     }
 
     public String getRandomPhone(){
-        int rPhone = RandomUtil.getRandomInt(1, 999999);
-        System.out.println(prefix + "-" + rPhone);
-        return  prefix + String.format("%06d", rPhone);
+        return  prefix + String.format("%06d", RandomUtil.getRandomInt(1, 999999));
     }
 }
