@@ -1,6 +1,9 @@
 package com.opentext.exstream.datagenerator;
 
+import com.opentext.exstream.util.DateUtil;
 import com.opentext.exstream.util.RandomUtil;
+
+import java.time.Year;
 
 /// Registry type: Client
 ///
@@ -16,6 +19,11 @@ import com.opentext.exstream.util.RandomUtil;
 /// C;"VICTOR SAULER PORTAL";"01568/00";"Com. G-00007, Sub. 001, Emp. 001, Id. 002";"013";"001";"001-005";"200";"CCOD124";"2021";"20210906-00129-0000769";"001";"ES49 2100 9999 9999 9999 9999",06082021,05092021;"33.799,01";"CAIXESBBXXX"
 /// ```
 public class ClientReg extends AbstractRegistry{
+    private static final char[] letters = {
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+    };
+
     // titular
     private String holder;
     // identificador: "01568/00"
@@ -53,6 +61,15 @@ public class ClientReg extends AbstractRegistry{
     public ClientReg() {
         super(RegistryType.CLIENT);
         holder = ClientManager.getRandomClient().toString();
+        id = getRandomId();
+        combination = getRandomCombination();
+        internalVer = asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3);
+        visibleVer = asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3);
+        agreements = getRandomAgreements();
+        division = asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3);
+        expiry = getRandomExpiry();
+        year = Year.now().getValue();
+        lot = getRandomLot();
     }
 
     //identificador: "01568/00"
@@ -63,11 +80,57 @@ public class ClientReg extends AbstractRegistry{
         return asFixLengthLeftZeroPadding(id1, 5) + "/" + asFixLengthLeftZeroPadding(id2, 2);
     }
 
+    //Combination: "Com. G-00007, Sub. 001, Emp. 001, Id. 002"
+    protected String getRandomCombination(){
+        return "Com. G-" +
+                asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 99999), 5) +
+                ", Sub." +
+                asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3) +
+                ", Emp. " +
+                asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3) +
+                ", Id. " +
+                asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3);
+    }
+
+    // Agreements: "001-005"
+    protected String getRandomAgreements(){
+        return asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3) +
+                "-" +
+                asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3);
+    }
+
+    // Expiry: CCOD124
+    protected String getRandomExpiry(){
+        int numLetters = letters.length - 1;
+        return Character.toString(letters[RandomUtil.getRandomInt(0, numLetters)]) +
+                Character.toString(letters[RandomUtil.getRandomInt(0, numLetters)]) +
+                Character.toString(letters[RandomUtil.getRandomInt(0, numLetters)]) +
+                Character.toString(letters[RandomUtil.getRandomInt(0, numLetters)]) +
+                asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3);
+    }
+
+    // Lot: "20210906-00129-0000769"
+    protected String getRandomLot(){
+        return DateUtil.getExstreamDateNDaysAgo(RandomUtil.getRandomInt(0, 90)) +
+                "-" +
+                asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 99999), 5) +
+                "-" +
+                asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 9999999), 7);
+    }
+
     @Override
     public String toRegistry() {
         // C;"VICTOR SAULER PORTAL";"01568/00";"Com. G-00007, Sub. 001, Emp. 001, Id. 002";"013";"001";"001-005";"200";"CCOD124";"2021";"20210906-00129-0000769";"001";"ES49 2100 9999 9999 9999 9999",06082021,05092021;"33.799,01";"CAIXESBBXXX"
         return regType.toString() + DELIMITER +
                 asString(holder) + DELIMITER +
-                asString(id) + DELIMITER;
+                asString(id) + DELIMITER +
+                asString(combination) + DELIMITER +
+                asString(internalVer) + DELIMITER +
+                asString(visibleVer) + DELIMITER +
+                asString(agreements) + DELIMITER +
+                asString(division)  + DELIMITER +
+                asString(expiry) + DELIMITER +
+                asString(Integer.toString(year))  + DELIMITER +
+                asString(lot) ;
     }
 }

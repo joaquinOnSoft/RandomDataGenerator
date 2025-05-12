@@ -19,7 +19,6 @@ public class DocumentRegTest {
         //Registry example:
         //  D;"00001";"001";"A";"99.999,99"
         String docStr = doc.toRegistry();
-        System.out.println("Registry: " + docStr);
 
         Assertions.assertNotNull(docStr);
         Assertions.assertTrue(docStr.startsWith("D;\"00001\";\"001\";"));
