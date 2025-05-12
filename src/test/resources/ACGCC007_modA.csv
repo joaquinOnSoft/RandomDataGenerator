@@ -1,0 +1,38 @@
+D;modelo;submodelo;segmento;saldoAnterior
+O;numero;direccion;cp;poblacion;telefono
+F;emision;extractoNumero
+C;titular;identificador;combinacion;verInterna;verVisible;agreements;division;caducidad;anyo;lote;hoja;iban;periodoInicial;periodoFinal;saldo;swift
+T;fecha;concepto1;concepto2;concepto3;ingreso;cargo;saldo
+D;"00001";"001";"A";"99.999,99"
+O;"01568";"PL. DEL MERCADO, 12";"22300";"BARBASTRO";"974266000"
+F;05092021;2021/009
+C;"VICTOR SAULER PORTAL";"01568/00";"Com. G-00007, Sub. 001, Emp. 001, Id. 002";"013";"001";"001-005";"200";"CCOD124";"2021";"20210906-00129-0000769";"001";"ES49 2100 9999 9999 9999 9999",06082021,05092021;"33.799,01";"CAIXESBBXXX"
+T;06082021;"ENT.FINANCIACION (05.08.2021)";"06.08.2021 Ref.: RECIBO EMITIDO PO";"Más datos: A99999999000";"0,0";"806,67";"33.320,80"
+T;07082021;"TARJETA DE DÉBITO";"07.08.2021 Ref.: AUTOSERVICIO gggg";"Más datos: Fecha de operación: 04-08-2021";"0,0";"26,4";"33.294,4"
+T;07082021;"TARJETA DE DÉBITO";"07.08.2021 Ref.: BBBBBB BB BBB BAR";"Más datos: Fecha de operación: 04-08-2021";"0,0";"26,79";"33.267,61"
+T;08082021;"TARJETA DE DÉBITO";"08.08.2021 Ref.: TTTTT TTTTTTTTTT";"Más datos: Fecha de operación: 05-08-2021";"0,0";"17,25";"33.250,36"
+T;08082021;"TARJETA DE DÉBITO";"08.08.2021 Ref.: TTTT BBBBBBBBO";"Más datos: Fecha de operación: 05-08-2021";"0,0";"19,95";"33.230,41"
+T;09082021;"TARJETA DE DÉBITO";"09.08.2021 Ref.: EEEEEI CENTER BAR";"Más datos: Fecha de operación: 06-08-2021";"0,0";"33,16";"33.197,25"
+T;10082021;"TARJETA DE DÉBITO";"10.08.2021 Ref.: ALTOARAGON 1 BARB";"Más datos: Fecha de operación: 07-08-2021";"0,0";"39,07";"33.158,18"
+T;13082021;"TARJETA DE DÉBITO";"13.08.2021 Ref.: EROSKI CENTER BAR";"Más datos: Fecha de operación: 10-08-2021";"0,0";"13,12";"33.145,06"
+T;14082021;"TARJETA DE DÉBITO";"14.08.2021 Ref.: AUTOSERVICIO FERN";"Más datos: Fecha de operación: 11-08-2021";"0,0";"5,83";"33.139,23"
+T;15082021;"TARJETA DE DÉBITO";"15.08.2021 Ref.: E.S. SABECO BARBA";"Más datos: Fecha de operación: 12-08-2021";"0,0";"30,02";"33.109,21"
+T;15082021;"TARJETA DE DÉBITO";"15.08.2021 Ref.: AUTOSERVICIO FERN";"Más datos: Fecha de operación: 12-08-2021";"0,0";"32,38";"33.076,83"
+T;15082021;"TARJETA DE DÉBITO";"15.08.2021 Ref.: HIPERSIMPLY BARBA";"Más datos: Fecha de operación: 12-08-2021";"0,0";"33,9";"33.042,93"
+T;15082021;"TARJETA DE DÉBITO";"15.08.2021 Ref.: DULCES DE BARBAST";"Más datos: Fecha de operación: 12-08-2021";"0,0";"34,0";"33.008,93"
+T;17082021;"TARJETA DE DÉBITO";"17.08.2021 Ref.: JAMONES ARNAL";"Más datos: Fecha de operación: 14-08-2021";"0,0";"5,32";"33.003,61"
+T;20082021;"TARJETA DE DÉBITO";"20.08.2021 Ref.: HIPERPAPELERIA CA";"Más datos: Fecha de operación: 17-08-2021";"0,0";"4,15";"32.999,46"
+T;20082021;"TARJETA DE DÉBITO";"20.08.2021 Ref.: AUTOSERVICIO FERN";"Más datos: Fecha de operación: 17-08-2021";"0,0";"15,64";"32.983,82"
+T;20082021;"TARJETA DE DÉBITO";"20.08.2021 Ref.: EROSKI CENTER BAR";"Más datos: Fecha de operación: 17-08-2021";"0,0";"18,56";"32.965,26"
+T;22082021;"TARJETA DE DÉBITO";"22.08.2021 Ref.: AUTOSERVICIO FERN";"Más datos: Fecha de operación: 19-08-2021";"0,0";"39,10";"32.926,16"
+T;23082021;"TARJETA DE DÉBITO";"23.08.2021 Ref.: TRAFFIC MULTIMARC";"Más datos: Fecha de operación: 20-08-2021";"0,0";"32,20";"32.893,96"
+T;23082021;"TARJETA DE DÉBITO";"23.08.2021 Ref.: BIMBA Y LOLA";"Más datos: Fecha de operación: 20-08-2021";"0,0";"52,00";"32.841,96"
+T;23082021;"TARJETA DE DÉBITO";"23.08.2021 Ref.: REST SANTA BELIND";"Más datos: Fecha de operación: 20-08-2021";"0,0";"64,40";"32.777,56"
+T;24082021;"PENSIÓN INSS/ISM";"24.08.2021";"Más datos: VICTOR SAULER PORTA VITOR";"1.582,53";"0,0";"34.360,09"
+T;27082021;"TARJETA DE DÉBITO";"27.08.2021 Ref.: AUTOSERVICIO FERN";"Más datos: Fecha de operación: 24-08-2021";"0,0";"34,53";"34.325,56"
+T;29082021;"TARJETA DE DÉBITO";"29.08.2021 Ref.: EROSKI CENTER BAR";"Más datos: Fecha de operación: 26-08-2021";"0,0";"21,50";"34.304,06"
+T;02092021;"DISPOSICIÓN DE EFECTIVO EN CAJERO";"02.09.2021 Oficina 1568";"";"0,0";"400,0";"33.904,06"
+T;03092021;"TARJETA DE DÉBITO";"03.09.2021 Ref.: TWINS WILLANUEVA";"Más datos: Fecha de operación: 31-08-2021";"0,0";"12,30";"33.891,76"
+T;03092021;"TARJETA DE DÉBITO";"03.09.2021 Ref.: AUTOSERVICIO FERN";"Más datos: Fecha de operación: 31-08-2021";"0,0";"18,39";"33.873,37"
+T;03092021;"TARJETA DE DÉBITO";"03.09.2021 Ref.: A.G.BENZINERA MON";"Más datos: Fecha de operación: 31-08-2021";"0,0";"64,01";"33.809,36"
+T;04092021;"TARJETA DE DÉBITO";"04.09.2021 Ref.: ALDI BARBASTRO";"Más datos: Fecha de operación: 01-09-2021";"0,0";"10,35";"33.799,01"
