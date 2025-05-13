@@ -75,8 +75,12 @@ public class ClientReg extends AbstractRegistry{
         iban = BankUtil.getRandomIban();
         initialPeriod = DateUtil.nowToExstreamDate();
         endPeriod = DateUtil.getExstreamDateNDaysAgo(30);
-        balance = RandomUtil.getRandomFloat(5000f, 99999f);
+        balance = RandomUtil.getRandomFloat(25000f, 99999f);
         swift = BankUtil.getRandomSwift();
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
     }
 
     //identificador: "01568/00"
@@ -123,6 +127,10 @@ public class ClientReg extends AbstractRegistry{
                 asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 99999), 5) +
                 "-" +
                 asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 9999999), 7);
+    }
+
+    public String getHolder() {
+        return holder;
     }
 
     @Override
