@@ -56,7 +56,7 @@ public class RandomDataGenerator {
         Option outputOpt = new Option(OPT_SHORT_OUTPUT, OPT_OUTPUT, true, "Output file name. Default value: random_data_yyyyMMdd.csv");
         options.addOption(outputOpt);
 
-        Option helpOpt = new Option(OPT_SHORT_HELP, OPT_HELP, false, "Output file name. Default value: random_data_yyyyMMdd.csv");
+        Option helpOpt = new Option(OPT_SHORT_HELP, OPT_HELP, false, "On-line help");
         options.addOption(helpOpt);
 
         CommandLineParser parser = new DefaultParser();
