@@ -64,7 +64,7 @@ public class ProvinceManager {
         return provinces.get(code);
     }
 
-    public static Province getRandomProvince(){
+    public static Province getRandomProvince() {
         int code = RandomUtil.getRandomInt(1, 52);
         return provinces.get(code);
     }

@@ -12,29 +12,29 @@ public abstract class AbstractRegistry {
         this.regType = regType;
     }
 
-    protected String asStringAmount(float value){
+    protected String asStringAmount(float value) {
         DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(new Locale("es", "ES"));
-        decimalFormat.applyPattern("###,###.00");
+        decimalFormat.applyPattern("###,##0.00");
         return "\"" + decimalFormat.format(value) + "\"";
     }
 
-    protected String asString(String value){
+    protected String asString(String value) {
         return "\"" + value + "\"";
     }
 
-    protected String asFixLengthLeftZeroPadding(int value, int length){
+    protected String asFixLengthLeftZeroPadding(int value, int length) {
         return String.format("%0" + length + "d", value);
     }
 
-    protected String asFixLengthLeftZeroPadding(String value, int length){
+    protected String asFixLengthLeftZeroPadding(String value, int length) {
         return String.format("%1$" + length + "s", value).replace(' ', '0');
     }
 
-    protected String asFixLengthLeftZeroPaddingString(int value, int length){
+    protected String asFixLengthLeftZeroPaddingString(int value, int length) {
         return "\"" + String.format("%0" + length + "d", value) + "\"";
     }
 
-    protected String asFixLengthLeftZeroPaddingString(String value, int length){
+    protected String asFixLengthLeftZeroPaddingString(String value, int length) {
         return "\"" + String.format("%1$" + length + "s", value).replace(' ', '0') + "\"";
     }
 

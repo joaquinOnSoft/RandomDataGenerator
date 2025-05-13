@@ -9,10 +9,34 @@ repositories {
     mavenCentral()
 }
 
+// Include dependent libraries in archive.
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Random data file generator'
+        attributes 'Implementation-Version': version
+        attributes 'Main-Class': 'com.opentext.exstream.datagenerator.RandomDataGenerator'
+    }
+
+    from {
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    //https://discuss.gradle.org/t/generate-runnable-jar-pakage-dependencies/28171
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 dependencies {
     // Apache Commons CLI
     // https://mvnrepository.com/artifact/commons-cli/commons-cli
     implementation 'commons-cli:commons-cli:1.9.0'
+
+    // Apache Log4j API
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api
+    implementation 'org.apache.logging.log4j:log4j-api:2.24.3'
+    // Apache Log4j Core
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    implementation 'org.apache.logging.log4j:log4j-core:2.24.3'
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'

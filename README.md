@@ -40,3 +40,12 @@ T;08082021;"TARJETA DE DÉBITO";"08.08.2021 Ref.: TTTTT TTTTTTTTTT";"Más datos:
 T;08082021;"TARJETA DE DÉBITO";"08.08.2021 Ref.: TTTT BBBBBBBBO";"Más datos: Fecha de operación: 05-08-2021";"0,0";"19,95";"33.230,41"
 T;09082021;"TARJETA DE DÉBITO";"09.08.2021 Ref.: EEEEEI CENTER BAR";"Más datos: Fecha de operación: 06-08-2021";"0,0";"33,16";"33.197,25"
 ```
+
+## Project settings
+
+This project requires `Lombok` plugin. To install in you IntelliJ IDE, just follow these steps:
+ - Got `File > Settings >  Plugins`
+ - Look for Lombok
+ - Make sure the "Enable annotation processing" is ticked
+
+See: [Java project with Gradle in IntelliJ IDEA: cannot resolve symbol 'google' but project compiles](https://stackoverflow.com/questions/24600804/java-project-with-gradle-in-intellij-idea-cannot-resolve-symbol-google-but-pr)

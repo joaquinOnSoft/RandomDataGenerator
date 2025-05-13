@@ -1,7 +1,8 @@
 package com.opentext.exstream.util;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BankUtilTest {
@@ -50,7 +51,6 @@ public class BankUtilTest {
         // This could occasionally fail due to randomness, but is very unlikely.
         assertNotEquals(swift1, swift2, "Different SWIFT must be generated");
     }
-
 
 
     // Test adicional para verificar el cálculo de dígitos de control

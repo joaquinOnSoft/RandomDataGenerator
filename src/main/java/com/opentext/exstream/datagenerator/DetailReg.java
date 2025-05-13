@@ -11,7 +11,7 @@ import java.util.Date;
 ///
 /// ```
 /// T;fecha;concepto1;concepto2;concepto3;ingreso;cargo;saldo
-/// ```
+///```
 ///
 /// Content example:
 ///
@@ -19,7 +19,7 @@ import java.util.Date;
 /// T;06082021;"ENT.FINANCIACION (05.08.2021)";"06.08.2021 Ref.: RECIBO EMITIDO PO";"Más datos: A99999999000";"0,0";"806,67";"33.320,80"
 /// T;07082021;"TARJETA DE DÉBITO";"07.08.2021 Ref.: AUTOSERVICIO gggg";"Más datos: Fecha de operación: 04-08-2021";"0,0";"26,4";"33.294,4"
 /// T;07082021;"TARJETA DE DÉBITO";"07.08.2021 Ref.: BBBBBB BB BBB BAR";"Más datos: Fecha de operación: 04-08-2021";"0,0";"26,79";"33.267,61"
-/// ```
+///```
 public class DetailReg extends AbstractRegistry {
     private final String[] commerce = {
             "PANADERÍA LA ESPIGA", "CARNICERÍA JOSÉ", "FRUTERÍA SOL",
@@ -30,7 +30,7 @@ public class DetailReg extends AbstractRegistry {
             "ELECTRODOMÉSTICOS PLUS", "FARMACIA SAN ROQUE", "BAZAR TODO A 1",
             "CAFETERÍA AROMAS", "ROPA MODA JOVEN", "MERCERÍA MARÍA",
             "QUIOSCO PRENSA", "TINTORERÍA LIMPIO", "DECORACIÓN HOGAR",
-            "PERFUMERÍA ESENCIA", "MOBILIARIO CASA","ÓPTICA MIRAR",
+            "PERFUMERÍA ESENCIA", "MOBILIARIO CASA", "ÓPTICA MIRAR",
             "CERVEZERÍA TAP", "GASOLINERA RÁPIDO", "CHURROS DELICIAS",
             "TABACOS FUMAR", "CESTERÍA ARTESAN", "RELOJERÍA TIEMPO",
             "ALIMENTACIÓN FRESCO", "LOTERÍAS SUERTE", "MÓVILES CONECTA",
@@ -70,10 +70,10 @@ public class DetailReg extends AbstractRegistry {
         balance = initialBalance - charge;
     }
 
-    protected String getConcept1(){
+    protected String getConcept1() {
         String strConcept = concept.toString();
 
-        if(concept == ConceptType.FINANCING_ENTITY){
+        if (concept == ConceptType.FINANCING_ENTITY) {
             strConcept += " (" + DateUtil.dateToStringDate(date, "dd.MM.yyyy") + ")";
         }
 
@@ -83,8 +83,8 @@ public class DetailReg extends AbstractRegistry {
     protected String getConcept2() {
         String strConcept = DateUtil.dateToStringDate(date, "dd.MM.yyyy");
 
-        switch (concept){
-            case ATM_CASH_WITHDRAWALS -> strConcept += "Oficina " + RandomUtil.getRandomInt(300, 8000);
+        switch (concept) {
+            case ATM_CASH_WITHDRAWALS -> strConcept += " Oficina " + RandomUtil.getRandomInt(300, 8000);
             case CREDIT_CARD, DEBIT_CARD -> strConcept += " Ref.: " + getRandomCommerce();
             case FINANCING_ENTITY -> strConcept += " Ref.: RECIBO EMITIDO PO";
             case PENSION -> {
@@ -97,25 +97,26 @@ public class DetailReg extends AbstractRegistry {
     protected String getConcept3() {
         String strConcept = "Más datos: ";
 
-        switch (concept){
+        switch (concept) {
             case ATM_CASH_WITHDRAWALS -> strConcept = "";
             case CREDIT_CARD, DEBIT_CARD -> {
-                strConcept += "Fecha de operación:" +
+                strConcept += "Fecha de operación: " +
                         DateUtil.dateToStringDate(DateUtil.getDateNDaysAgo(date, RandomUtil.getRandomInt(0, 3)), "dd-MM-yyyy");
             }
-            case FINANCING_ENTITY -> strConcept += "A" + asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(111111111, 999999999), 9);
+            case FINANCING_ENTITY ->
+                    strConcept += "A" + asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(111111111, 999999999), 9);
             case PENSION -> strConcept += holder;
         }
         return strConcept;
     }
 
-    private String getRandomCommerce(){
-        return commerce[RandomUtil.getRandomInt(0, commerce.length -1)];
+    private String getRandomCommerce() {
+        return commerce[RandomUtil.getRandomInt(0, commerce.length - 1)];
     }
 
-    protected float getRandomDeposit(){
+    protected float getRandomDeposit() {
         float depo = 0f;
-        if(concept == ConceptType.PENSION){
+        if (concept == ConceptType.PENSION) {
             depo = RandomUtil.getRandomFloat(1500, 3000);
         }
 
@@ -123,10 +124,10 @@ public class DetailReg extends AbstractRegistry {
     }
 
 
-    protected float getRandomCharge(){
+    protected float getRandomCharge() {
         float charge = RandomUtil.getRandomFloat(20, 300);
 
-        if(concept == ConceptType.PENSION){
+        if (concept == ConceptType.PENSION) {
             charge = 0f;
         }
 

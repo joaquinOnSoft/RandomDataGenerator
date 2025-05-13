@@ -21,11 +21,11 @@ public enum ConceptType {
         return type;
     }
 
-    public static ConceptType getRandomType(){
+    public static ConceptType getRandomType() {
         ConceptType type = null;
 
         int rand = RandomUtil.getRandomInt(1, 100);
-        if (rand <= 1){
+        if (rand <= 1) {
             type = PENSION; // 1%
         } else if (rand <= 6) {
             type = FINANCING_ENTITY; // 5%

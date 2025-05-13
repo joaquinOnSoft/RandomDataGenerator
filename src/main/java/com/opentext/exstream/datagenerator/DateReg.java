@@ -11,14 +11,14 @@ import java.util.Date;
 ///
 /// ```
 /// F;emision;extractoNumero
-/// ```
+///```
 ///
 /// Content example:
 ///
 /// ```
 /// F;05092021;2021/009
-/// ```
-public class DateReg extends AbstractRegistry{
+///```
+public class DateReg extends AbstractRegistry {
     private final Date emision;
     private final String extractNumber;
 
@@ -27,7 +27,6 @@ public class DateReg extends AbstractRegistry{
         emision = DateUtil.now();
         extractNumber = DateUtil.dateToStringDate(emision, "yyyy") + "/" + RandomUtil.getRandomInt(100, 999);
     }
-
 
 
     @Override

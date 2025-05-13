@@ -17,7 +17,7 @@ public class ClientRegTest {
 
     @Test
     //Combination: "Com. G-00007, Sub. 001, Emp. 001, Id. 002"
-    public void getRandomCombination(){
+    public void getRandomCombination() {
         String combination = client.getRandomCombination();
 
         Assertions.assertNotNull(combination);
@@ -26,7 +26,7 @@ public class ClientRegTest {
     }
 
     @Test
-    public void getRandomAgreements(){
+    public void getRandomAgreements() {
         String version = client.getRandomAgreements();
 
         Assertions.assertNotNull(version);
@@ -35,7 +35,7 @@ public class ClientRegTest {
     }
 
     @Test
-    public void getRandomExpiry(){
+    public void getRandomExpiry() {
         String expiry = client.getRandomExpiry();
 
         Assertions.assertNotNull(expiry);

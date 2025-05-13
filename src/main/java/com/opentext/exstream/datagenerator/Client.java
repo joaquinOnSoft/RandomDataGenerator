@@ -1,11 +1,9 @@
 package com.opentext.exstream.datagenerator;
 
-import java.util.Random;
-
 public class Client {
-    private String name;
-    private String firstFamilyName;
-    private String secondFamilyName;
+    private final String name;
+    private final String firstFamilyName;
+    private final String secondFamilyName;
 
     public Client(String name, String firstFamilyName, String secondFamilyName) {
         this.name = name;

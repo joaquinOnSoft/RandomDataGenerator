@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class ProvinceManagerTest {
     @Test
-    public void getRandomProvince(){
+    public void getRandomProvince() {
         Province prov = ProvinceManager.getProvince(49);
 
         Assertions.assertEquals(49, prov.getCode());

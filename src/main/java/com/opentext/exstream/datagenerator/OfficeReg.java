@@ -9,22 +9,21 @@ import com.opentext.exstream.util.RandomUtil;
 ///
 /// ```
 /// O;numero;direccion;cp;poblacion;telefono
-/// ```
+///```
 ///
 /// Content example:
 ///
 /// ```
 /// O;"01568";"PL. DEL MERCADO, 12";"22300";"BARBASTRO";"974266000"
-/// ```
-public class OfficeReg extends AbstractRegistry{
+///```
+public class OfficeReg extends AbstractRegistry {
 
 
-
-    private int number;
-    private String address;
-    private String zip;
-    private String locality;
-    private String phone;
+    private final int number;
+    private final String address;
+    private final String zip;
+    private final String locality;
+    private final String phone;
 
     public OfficeReg() {
         super(RegistryType.OFFICE);
@@ -37,7 +36,6 @@ public class OfficeReg extends AbstractRegistry{
         locality = province.getName();
         phone = province.getRandomPhone();
     }
-
 
 
     @Override

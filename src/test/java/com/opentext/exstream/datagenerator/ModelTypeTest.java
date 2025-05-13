@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 
 public class ModelTypeTest {
     @Test
-    public void getRandomType(){
+    public void getRandomType() {
         ModelType type;
 
         boolean modelBUsed = false;
-        for(int i = 0 ; i<100; i++) {
+        for (int i = 0; i < 100; i++) {
             type = ModelType.getRandomType();
-            if(type == ModelType.MODEL_B){
+            if (type == ModelType.MODEL_B) {
                 modelBUsed = true;
                 break;
             }

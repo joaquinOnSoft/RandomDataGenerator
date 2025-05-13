@@ -4,19 +4,18 @@ import com.opentext.exstream.util.DateUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
 
 public class DetailRegTest {
 
     static DetailReg detail;
 
     @BeforeAll
-    public static void setup(){
+    public static void setup() {
         detail = new DetailReg("Peter Parker", DateUtil.now(), 300345f);
     }
 
     @RepeatedTest(10)
-    public void getConcept1(){
+    public void getConcept1() {
         String concept = detail.getConcept1();
         Assertions.assertNotNull(concept);
         Assertions.assertTrue(
@@ -29,20 +28,20 @@ public class DetailRegTest {
     }
 
     @RepeatedTest(10)
-    public void getConcept2(){
+    public void getConcept2() {
         String concept = detail.getConcept2();
         Assertions.assertNotNull(concept);
     }
 
     @RepeatedTest(10)
-    public void getConcept3(){
+    public void getConcept3() {
         String concept = detail.getConcept3();
         Assertions.assertNotNull(concept);
-        Assertions.assertTrue( concept.startsWith("Más datos:") || concept.compareTo("") == 0);
+        Assertions.assertTrue(concept.startsWith("Más datos:") || concept.compareTo("") == 0);
     }
 
     @RepeatedTest(10)
-    public void toRegistry(){
+    public void toRegistry() {
         String reg = detail.toRegistry();
 
         Assertions.assertNotNull(reg);

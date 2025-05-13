@@ -18,11 +18,11 @@ public enum ModelType {
         return Character.toString(type);
     }
 
-    public static  ModelType getRandomType(){
+    public static ModelType getRandomType() {
         ModelType type = MODEL_A;
 
         int rand = RandomUtil.getRandomInt(1, 2);
-        if (rand == 2){
+        if (rand == 2) {
             type = MODEL_B;
         }
 

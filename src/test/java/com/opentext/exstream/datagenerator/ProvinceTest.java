@@ -1,14 +1,13 @@
 package com.opentext.exstream.datagenerator;
 
-import com.opentext.exstream.util.RandomUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class ProvinceTest {
-    private static Province prov = ProvinceManager.getRandomProvince();
+    private static final Province prov = ProvinceManager.getRandomProvince();
 
     @Test
-    public void getRandomZip(){
+    public void getRandomZip() {
         String zip = prov.getRandomZip();
 
         Assertions.assertNotNull(zip);
@@ -16,7 +15,7 @@ public class ProvinceTest {
     }
 
     @Test
-    public void getRandomPhone(){
+    public void getRandomPhone() {
         String phone = prov.getRandomPhone();
 
         Assertions.assertNotNull(phone);

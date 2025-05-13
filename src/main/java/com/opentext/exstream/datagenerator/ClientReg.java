@@ -12,51 +12,51 @@ import java.time.Year;
 ///
 /// ```
 /// C;titular;identificador;combinacion;verInterna;verVisible;agreements;division;caducidad;anyo;lote;hoja;iban;periodoInicial;periodoFinal;saldo;swift
-/// ```
+///```
 ///
 /// Content example:
 ///
 /// ```
 /// C;"VICTOR SAULER PORTAL";"01568/00";"Com. G-00007, Sub. 001, Emp. 001, Id. 002";"013";"001";"001-005";"200";"CCOD124";"2021";"20210906-00129-0000769";"001";"ES49 2100 9999 9999 9999 9999";06082021;05092021;"33.799,01";"CAIXESBBXXX"
-/// ```
-public class ClientReg extends AbstractRegistry{
+///```
+public class ClientReg extends AbstractRegistry {
     private static final char[] letters = {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
             'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     };
 
     // titular
-    private String holder;
+    private final String holder;
     // identificador: "01568/00"
-    private String id;
+    private final String id;
     // combinacion
-    private String combination;
+    private final String combination;
     // verInterna
-    private String internalVer;
+    private final String internalVer;
     // verVisible
-    private String visibleVer;
+    private final String visibleVer;
     // agreements
-    private String agreements;
+    private final String agreements;
     // division
-    private String division;
+    private final String division;
     // caducidad
-    private String expiry;
+    private final String expiry;
     // anyo
-    private int year;
+    private final int year;
     // lote
-    private String lot;
+    private final String lot;
     // hoja
-    private String sheet;
+    private final String sheet;
     // iban
-    private String iban;
+    private final String iban;
     // periodoInicial
-    private String initialPeriod;
+    private final String initialPeriod;
     // periodoFinal
-    private String endPeriod;
+    private final String endPeriod;
     // saldo
     private float balance;
     // swift
-    private String swift;
+    private final String swift;
 
 
     public ClientReg() {
@@ -84,7 +84,7 @@ public class ClientReg extends AbstractRegistry{
     }
 
     //identificador: "01568/00"
-    protected String getRandomId(){
+    protected String getRandomId() {
         int id1 = RandomUtil.getRandomInt(1, 99999);
         int id2 = RandomUtil.getRandomInt(1, 99);
 
@@ -92,7 +92,7 @@ public class ClientReg extends AbstractRegistry{
     }
 
     //Combination: "Com. G-00007, Sub. 001, Emp. 001, Id. 002"
-    protected String getRandomCombination(){
+    protected String getRandomCombination() {
         return "Com. G-" +
                 asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 99999), 5) +
                 ", Sub." +
@@ -104,24 +104,24 @@ public class ClientReg extends AbstractRegistry{
     }
 
     // Agreements: "001-005"
-    protected String getRandomAgreements(){
+    protected String getRandomAgreements() {
         return asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3) +
                 "-" +
                 asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3);
     }
 
     // Expiry: CCOD124
-    protected String getRandomExpiry(){
+    protected String getRandomExpiry() {
         int numLetters = letters.length - 1;
         return Character.toString(letters[RandomUtil.getRandomInt(0, numLetters)]) +
-                Character.toString(letters[RandomUtil.getRandomInt(0, numLetters)]) +
-                Character.toString(letters[RandomUtil.getRandomInt(0, numLetters)]) +
-                Character.toString(letters[RandomUtil.getRandomInt(0, numLetters)]) +
+                letters[RandomUtil.getRandomInt(0, numLetters)] +
+                letters[RandomUtil.getRandomInt(0, numLetters)] +
+                letters[RandomUtil.getRandomInt(0, numLetters)] +
                 asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 999), 3);
     }
 
     // Lot: "20210906-00129-0000769"
-    protected String getRandomLot(){
+    protected String getRandomLot() {
         return DateUtil.getExstreamDateNDaysAgo(RandomUtil.getRandomInt(0, 90)) +
                 "-" +
                 asFixLengthLeftZeroPadding(RandomUtil.getRandomInt(1, 99999), 5) +
@@ -143,15 +143,15 @@ public class ClientReg extends AbstractRegistry{
                 asString(internalVer) + DELIMITER +
                 asString(visibleVer) + DELIMITER +
                 asString(agreements) + DELIMITER +
-                asString(division)  + DELIMITER +
+                asString(division) + DELIMITER +
                 asString(expiry) + DELIMITER +
                 asString(Integer.toString(year)) + DELIMITER +
-                asString(lot)  + DELIMITER +
+                asString(lot) + DELIMITER +
                 asString(sheet) + DELIMITER +
                 asString(iban) + DELIMITER +
-                initialPeriod  + DELIMITER +
-                endPeriod  + DELIMITER +
-                asStringAmount(balance)  + DELIMITER +
+                initialPeriod + DELIMITER +
+                endPeriod + DELIMITER +
+                asStringAmount(balance) + DELIMITER +
                 asString(swift);
     }
 }

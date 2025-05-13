@@ -7,7 +7,7 @@ public class OfficeRegTest {
     static OfficeReg office = new OfficeReg();
 
     @Test
-    public void toRegistry(){
+    public void toRegistry() {
         //Registry example:
         //  O;"01568";"PL. DEL MERCADO, 12";"22300";"BARBASTRO";"974266000"
         String officeRegistry = office.toRegistry();
@@ -17,7 +17,7 @@ public class OfficeRegTest {
         int lastSemiColumn = officeRegistry.lastIndexOf(";");
 
         //Phone number can have 8 or 9 digits
-        Assertions.assertTrue(officeRegistry.length() - 11 >= lastSemiColumn  );
-        Assertions.assertTrue(officeRegistry.length() - 12 <= lastSemiColumn  );
+        Assertions.assertTrue(officeRegistry.length() - 11 >= lastSemiColumn);
+        Assertions.assertTrue(officeRegistry.length() - 12 <= lastSemiColumn);
     }
 }

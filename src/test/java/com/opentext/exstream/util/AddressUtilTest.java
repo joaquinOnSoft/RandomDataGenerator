@@ -7,11 +7,11 @@ import java.util.regex.Pattern;
 
 public class AddressUtilTest {
     @Test
-    public void getRandomAddress(){
+    public void getRandomAddress() {
         String address = AddressUtil.getRandomAddress();
 
         Assertions.assertNotNull(address);
-        Assertions.assertTrue( isNumeric(  address.substring(address.length() -1) ) );
+        Assertions.assertTrue(isNumeric(address.substring(address.length() - 1)));
     }
 
     public boolean isNumeric(String strNum) {

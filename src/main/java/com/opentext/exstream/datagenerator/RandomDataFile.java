@@ -7,11 +7,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class RandomDataFile {
-    public static void toFile(String fileName)  {
+    public static void toFile(int numClients, String fileName) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
-            writer.append(getRandomClientData());
-            writer.flush();
+
+            for (int i = 0; i < numClients; i++) {
+                writer.append(getRandomClientData());
+                writer.flush();
+            }
 
             writer.close();
         } catch (IOException e) {
@@ -19,7 +22,7 @@ public class RandomDataFile {
         }
     }
 
-    protected static String getRandomClientData(){
+    protected static String getRandomClientData() {
         StringBuilder data = new StringBuilder();
 
         DocumentReg doc = new DocumentReg();

@@ -9,24 +9,24 @@ import com.opentext.exstream.util.RandomUtil;
 ///
 /// ```
 /// D;modelo;submodelo;segmento;saldoAnterior
-/// ```
+///```
 ///
 /// Content example:
 ///
 /// ```
 /// D;"00001";"001";"A";"99.999,99"
-/// ```
+///```
 public class DocumentReg extends AbstractRegistry {
 
-    private static final String MODEL_1= "00001";
-    private static final String SUBMODEL_1= "001";
+    private static final String MODEL_1 = "00001";
+    private static final String SUBMODEL_1 = "001";
 
-    private String model;
-    private String submodel;
-    private ModelType modelType;
+    private final String model;
+    private final String submodel;
+    private final ModelType modelType;
     private float balance;
 
-    public DocumentReg(){
+    public DocumentReg() {
         super(RegistryType.DOCUMENT);
         model = MODEL_1;
         submodel = SUBMODEL_1;
@@ -39,7 +39,7 @@ public class DocumentReg extends AbstractRegistry {
     }
 
     @Override
-    public String toRegistry(){
+    public String toRegistry() {
         return regType.toString() + DELIMITER +
                 asString(model) + DELIMITER +
                 asString(submodel) + DELIMITER +

@@ -10,6 +10,7 @@ public class BankUtil {
 
     /**
      * Genera un IBAN español aleatorio válido para CaixaBank
+     *
      * @return IBAN válido (formato ESXX 2100 XXXX XXXX XXXX XXXX)
      */
     public static String getRandomIban() {
@@ -27,6 +28,7 @@ public class BankUtil {
 
     /**
      * Genera un código SWIFT/BIC aleatorio válido para una oficina de CaixaBank
+     *
      * @return Código SWIFT (formato CAIXESBBXXX)
      */
     public static String getRandomSwift() {

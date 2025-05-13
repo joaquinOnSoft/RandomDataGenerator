@@ -7,15 +7,16 @@ public class DocumentRegTest {
     static DocumentReg doc = new DocumentReg();
 
     @Test
-    public void asPrice(){
+    public void asPrice() {
         Assertions.assertEquals("\"12.345,67\"", doc.asStringAmount(12345.67f));
 
         Assertions.assertEquals("\"12.345,00\"", doc.asStringAmount(12345.00f));
 
+        Assertions.assertEquals("\"0,00\"", doc.asStringAmount(0f));
     }
 
     @Test
-    public void toRegistry(){
+    public void toRegistry() {
         //Registry example:
         //  D;"00001";"001";"A";"99.999,99"
         String docStr = doc.toRegistry();
@@ -28,27 +29,27 @@ public class DocumentRegTest {
 
 
     @Test
-    public void asFixLengthLeftZeroPaddingFromInt(){
+    public void asFixLengthLeftZeroPaddingFromInt() {
         String str = doc.asFixLengthLeftZeroPadding(1236, 5);
         Assertions.assertEquals("01236", str);
     }
 
     @Test
-    public void asFixLengthLeftZeroPaddingFromStr(){
+    public void asFixLengthLeftZeroPaddingFromStr() {
         String str = doc.asFixLengthLeftZeroPadding("1236", 5);
         Assertions.assertEquals("01236", str);
     }
 
 
     @Test
-    public void asFixLengthLeftZeroPaddingStringFromInt(){
+    public void asFixLengthLeftZeroPaddingStringFromInt() {
         String str = doc.asFixLengthLeftZeroPaddingString(1236, 5);
         Assertions.assertEquals("\"01236\"", str);
 
     }
 
     @Test
-    public void asFixLengthLeftZeroPaddingStringFromStr(){
+    public void asFixLengthLeftZeroPaddingStringFromStr() {
         String str = doc.asFixLengthLeftZeroPaddingString("1236", 5);
         Assertions.assertEquals("\"01236\"", str);
 

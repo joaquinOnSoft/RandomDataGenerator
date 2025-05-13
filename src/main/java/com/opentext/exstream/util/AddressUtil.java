@@ -1,7 +1,7 @@
 package com.opentext.exstream.util;
 
 public class AddressUtil {
-    private static final String[]  streets = {
+    private static final String[] streets = {
             "PL. DEL MERCADO", "C. MAYOR", "AV. DE LA CONSTITUCIÓN",
             "C. REAL", "C. DEL OLIVO", "C. DE LA LUNA", "AV. DEL RÍO",
             "C. SANTA MARÍA", "PL. DE ESPAÑA", "C. DEL CARMEN",
@@ -13,9 +13,9 @@ public class AddressUtil {
             "PL. DE LA VILLA", "C. DE LAS FLORES", "AV. DEL MAR"
     };
 
-    public static String getRandomAddress(){
-        int index = RandomUtil.getRandomInt(0, streets.length -1);
+    public static String getRandomAddress() {
+        int index = RandomUtil.getRandomInt(0, streets.length - 1);
 
-        return streets[index] + " " +RandomUtil.getRandomInt(1, 50);
+        return streets[index] + " " + RandomUtil.getRandomInt(1, 50);
     }
 }

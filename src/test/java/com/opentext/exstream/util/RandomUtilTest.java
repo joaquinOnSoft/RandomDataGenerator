@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class RandomUtilTest {
     @Test
-    public void getRandomInt(){
+    public void getRandomInt() {
         int min = 1;
         int max = 10;
         int random = RandomUtil.getRandomInt(min, max);
@@ -15,7 +15,7 @@ public class RandomUtilTest {
     }
 
     @Test
-    public void getRandomFloat(){
+    public void getRandomFloat() {
         float min = 1;
         float max = 10;
         float random = RandomUtil.getRandomFloat(min, max);
