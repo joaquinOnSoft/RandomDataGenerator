@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'com.opentext.exstream.datagenerator'
-version = '25.05'
+version = '25.05.16'
 
 repositories {
     mavenCentral()
