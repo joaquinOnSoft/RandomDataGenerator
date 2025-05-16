@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 public class ModelTypeTest {
     @Test
     public void getRandomType() {
-        ModelType type;
+        Segment type;
 
         boolean modelBUsed = false;
         for (int i = 0; i < 100; i++) {
-            type = ModelType.getRandomType();
-            if (type == ModelType.MODEL_B) {
+            type = Segment.getRandomType();
+            if (type == Segment.B) {
                 modelBUsed = true;
                 break;
             }

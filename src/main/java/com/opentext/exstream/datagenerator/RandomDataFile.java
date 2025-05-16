@@ -29,7 +29,7 @@ public class RandomDataFile {
         OfficeReg office = new OfficeReg();
         DateReg dateReg = new DateReg();
         ClientReg client = new ClientReg();
-        DetailRegManager detailMng = new DetailRegManager(client.getHolder(), RandomUtil.getRandomFloat(25000, 99999));
+        DetailRegManager detailMng = new DetailRegManager(doc.getSegment(), client.getHolder(), RandomUtil.getRandomFloat(25000, 99999));
         client.setBalance(detailMng.getCurrentBalance());
 
         data.append(doc.toRegistry()).append("\n")

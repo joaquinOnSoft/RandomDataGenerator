@@ -2,14 +2,14 @@ package com.opentext.exstream.datagenerator;
 
 import com.opentext.exstream.util.RandomUtil;
 
-public enum ModelType {
+public enum Segment {
 
-    MODEL_A('A'),
-    MODEL_B('B');
+    A('A'),
+    B('B');
 
     private final char type;
 
-    ModelType(char name) {
+    Segment(char name) {
         this.type = name;
     }
 
@@ -18,12 +18,12 @@ public enum ModelType {
         return Character.toString(type);
     }
 
-    public static ModelType getRandomType() {
-        ModelType type = MODEL_A;
+    public static Segment getRandomType() {
+        Segment type = A;
 
         int rand = RandomUtil.getRandomInt(1, 2);
         if (rand == 2) {
-            type = MODEL_B;
+            type = B;
         }
 
         return type;

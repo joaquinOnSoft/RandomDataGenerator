@@ -2,6 +2,7 @@ package com.opentext.exstream.datagenerator;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Date;
 import java.util.Locale;
 
 public abstract class AbstractRegistry {
@@ -12,10 +13,14 @@ public abstract class AbstractRegistry {
         this.regType = regType;
     }
 
-    protected String asStringAmount(float value) {
+    protected String asAmount(float value) {
         DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(new Locale("es", "ES"));
         decimalFormat.applyPattern("###,##0.00");
-        return "\"" + decimalFormat.format(value) + "\"";
+        return decimalFormat.format(value);
+    }
+
+    protected String asStringAmount(float value) {
+        return "\"" + asAmount(value) + "\"";
     }
 
     protected String asString(String value) {

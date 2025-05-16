@@ -66,7 +66,7 @@ public class ClientRegTest {
         String reg = client.toRegistry();
 
         Assertions.assertNotNull(reg);
-        Assertions.assertTrue(reg.startsWith("C;\""));
+        Assertions.assertTrue(reg.startsWith("C;"));
 
         String[] tokens = reg.split(";");
         Assertions.assertNotNull(tokens);

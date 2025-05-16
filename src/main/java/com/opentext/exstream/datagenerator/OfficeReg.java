@@ -42,10 +42,10 @@ public class OfficeReg extends AbstractRegistry {
     public String toRegistry() {
         //O;"01568";"PL. DEL MERCADO, 12";"22300";"BARBASTRO";"974266000"
         return regType.toString() + DELIMITER +
-                asString(String.format("%05d", number)) + DELIMITER +
-                asString(address) + DELIMITER +
-                asString(zip) + DELIMITER +
-                asString(locality) + DELIMITER +
-                asString(phone);
+                String.format("%05d", number) + DELIMITER +
+                address + DELIMITER +
+                zip + DELIMITER +
+                locality + DELIMITER +
+                phone;
     }
 }

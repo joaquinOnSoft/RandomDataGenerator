@@ -7,11 +7,11 @@ import org.junit.jupiter.api.RepeatedTest;
 
 public class DetailRegTest {
 
-    static DetailReg detail;
+    static DetailSegmentAReg detail;
 
     @BeforeAll
     public static void setup() {
-        detail = new DetailReg("Peter Parker", DateUtil.now(), 300345f);
+        detail = new DetailSegmentAReg("Peter Parker", DateUtil.now(), 300345f);
     }
 
     @RepeatedTest(10)

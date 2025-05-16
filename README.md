@@ -10,11 +10,17 @@ App to generate a data sample file following a given format
     - (O)ficina
     - (F)echa
     - (C)liente 
-    - De(T)alle  
+    - De(T)alle  (A segment)
+    - Detalle (U)  (B segment)
+ - Data from model A and B and must be different, it is the third field of the record (D)ocument (segment).
+ - The probability of each segment (A / B) must be 50%
  - The dates are in ddMMyyyy format.
  - I have put the text fields in inverted commas so that Exstream recognises them as strings, including the numbers.
- - The data corresponds to the attached PDF, so the last figure in the detail is the previous balance +/- income or debit. If we mix the records until we get the stipulated 50 this figure will be wrong, but I don't think it is important now.
+ - The data corresponds to the attached PDF, so the last figure in the detail is the previous balance +/- income or 
+   debit. If we mix the records until we get the stipulated 50 this figure will be wrong, but I don't think it is important now.
  - The type A or B is in record D, the third field. It is best to also make this field random
+ - Registry `De(T)alle` and `Detalle (U)` use the same model definition. 
+   When a model B is generated, a registry (U) is used. When a model A is generated, a registry (T) is used 
 
 ### Fields definition
 

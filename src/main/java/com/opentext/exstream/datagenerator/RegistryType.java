@@ -7,11 +7,13 @@ public enum RegistryType {
     /// - (F)echa
     /// - (C)liente
     /// - de(T)alle
+    /// - detalle B (U)
     DOCUMENT('D'),
     OFFICE('O'),
     DATE('F'),
     CLIENT('C'),
-    DETAIL('T');
+    DETAIL_SEGMENT_A('T'),
+    DETAIL_SEGMENT_B('U');
 
     private final char type;
 

@@ -137,21 +137,21 @@ public class ClientReg extends AbstractRegistry {
     public String toRegistry() {
         // C;"VICTOR SAULER PORTAL";"01568/00";"Com. G-00007, Sub. 001, Emp. 001, Id. 002";"013";"001";"001-005";"200";"CCOD124";"2021";"20210906-00129-0000769";"001";"ES49 2100 9999 9999 9999 9999",06082021,05092021;"33.799,01";"CAIXESBBXXX"
         return regType.toString() + DELIMITER +
-                asString(holder) + DELIMITER +
-                asString(id) + DELIMITER +
-                asString(combination) + DELIMITER +
-                asString(internalVer) + DELIMITER +
-                asString(visibleVer) + DELIMITER +
-                asString(agreements) + DELIMITER +
-                asString(division) + DELIMITER +
-                asString(expiry) + DELIMITER +
-                asString(Integer.toString(year)) + DELIMITER +
-                asString(lot) + DELIMITER +
-                asString(sheet) + DELIMITER +
-                asString(iban) + DELIMITER +
+                holder + DELIMITER +
+                id + DELIMITER +
+                combination + DELIMITER +
+                internalVer + DELIMITER +
+                visibleVer + DELIMITER +
+                agreements + DELIMITER +
+                division + DELIMITER +
+                expiry + DELIMITER +
+                year + DELIMITER +
+                lot + DELIMITER +
+                sheet + DELIMITER +
+                iban + DELIMITER +
                 initialPeriod + DELIMITER +
                 endPeriod + DELIMITER +
-                asStringAmount(balance) + DELIMITER +
-                asString(swift);
+                asAmount(balance) + DELIMITER +
+                swift;
     }
 }

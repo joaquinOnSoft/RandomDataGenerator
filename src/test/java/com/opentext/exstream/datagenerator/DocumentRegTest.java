@@ -22,9 +22,9 @@ public class DocumentRegTest {
         String docStr = doc.toRegistry();
 
         Assertions.assertNotNull(docStr);
-        Assertions.assertTrue(docStr.startsWith("D;\"00001\";\"001\";"));
-        Assertions.assertEquals(docStr.length() - 8, docStr.indexOf("."));
-        Assertions.assertEquals(docStr.length() - 4, docStr.indexOf(","));
+        Assertions.assertTrue(docStr.startsWith("D;00001;001;"));
+        Assertions.assertEquals(docStr.length() - 7, docStr.indexOf("."));
+        Assertions.assertEquals(docStr.length() - 3, docStr.indexOf(","));
     }
 
 

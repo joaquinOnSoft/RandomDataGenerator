@@ -23,14 +23,14 @@ public class DocumentReg extends AbstractRegistry {
 
     private final String model;
     private final String submodel;
-    private final ModelType modelType;
+    private final Segment segment;
     private float balance;
 
     public DocumentReg() {
         super(RegistryType.DOCUMENT);
         model = MODEL_1;
         submodel = SUBMODEL_1;
-        modelType = ModelType.getRandomType();
+        segment = Segment.getRandomType();
         balance = RandomUtil.getRandomFloat(5000f, 99999);
     }
 
@@ -38,12 +38,16 @@ public class DocumentReg extends AbstractRegistry {
         this.balance = balance;
     }
 
+    public Segment getSegment() {
+        return segment;
+    }
+
     @Override
     public String toRegistry() {
         return regType.toString() + DELIMITER +
-                asString(model) + DELIMITER +
-                asString(submodel) + DELIMITER +
-                asString(modelType.toString()) + DELIMITER +
-                asStringAmount(balance);
+                model + DELIMITER +
+                submodel + DELIMITER +
+                segment.toString() + DELIMITER +
+                asAmount(balance);
     }
 }

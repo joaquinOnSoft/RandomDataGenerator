@@ -13,11 +13,11 @@ public class OfficeRegTest {
         String officeRegistry = office.toRegistry();
 
         Assertions.assertNotNull(officeRegistry);
-        Assertions.assertTrue(officeRegistry.startsWith("O;\""));
+        Assertions.assertTrue(officeRegistry.startsWith("O;"));
         int lastSemiColumn = officeRegistry.lastIndexOf(";");
 
         //Phone number can have 8 or 9 digits
-        Assertions.assertTrue(officeRegistry.length() - 11 >= lastSemiColumn);
-        Assertions.assertTrue(officeRegistry.length() - 12 <= lastSemiColumn);
+        Assertions.assertTrue(officeRegistry.length() - 10 >= lastSemiColumn);
+        Assertions.assertTrue(officeRegistry.length() - 11 <= lastSemiColumn);
     }
 }
